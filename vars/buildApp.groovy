@@ -1,4 +1,4 @@
-def call_Iam_sharedLib() {
+def buildApp() {
     echo "Building Application"
 
     sh 'mvn clean package -DskipTests' 

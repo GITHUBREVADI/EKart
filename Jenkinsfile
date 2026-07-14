@@ -1,6 +1,4 @@
-
-
-
+@Library('my-shared-lib') _
 
 pipeline {
     agent any
@@ -40,11 +38,19 @@ pipeline {
             	}
 }
 
-                    stage('Build Application') {
+                    //stage('Build Application') {
+                    	//steps {
+                    		//sh 'mvn clean package -DskipTests'
+                    	//}
+                   // }
+
+        stage('Build Application') {
                     	steps {
-                    		sh 'mvn clean package -DskipTests'
-                    	}
-                    }
+                            buildApp()
+                            
+                        }
+    }
+        
                     
                             
                     stage('Build & Push Docker Image') {
